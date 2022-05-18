@@ -1,6 +1,6 @@
 const course = {
-    name:"dadfaqqwjieoiqwe",
-    duration:8
+    name: "React with Srpgin boot",
+    duration: 8
 }
 
 export default course

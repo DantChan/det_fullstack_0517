@@ -1,8 +1,7 @@
 "use strict";
-
-console.log("x=" + x);
+console.log("x=", x)
+//console.log("y=",y)
 var x = 5;
-x += 1;
-var y = 'hello world';
-console.log("x=" + x);
-console.log("y=" + y);
+//y = 6;
+console.log("x=", x)
+console.log("y=", y)
