@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 
-function  Banner(props) {
+function Banner(props) {
     return (
-        <div><input type="text" onChange={props.clickCallback} value={props.name}/></div>
+        <div><input type="text" onChange={props.clickCallback} value={props.name} /></div>
     )
 }
 

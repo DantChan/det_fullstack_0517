@@ -8,12 +8,12 @@ class App extends React.Component {
   titleChangeListener = event => {
     this.setState({ title: event.target.value })
   }
-  state={
-    persons:[{name:"mark",age:44},
-    {name:"frank",age:32},
-    {name:"tim",age:23}],
-    teamMax:10,
-    title:"hello react"
+  state = {
+    persons: [{ name: "mark", age: 44 },
+    { name: "frank", age: 32 },
+    { name: "tim", age: 23 }],
+    teamMax: 10,
+    title: "hello react"
 
   }
   changeNameHandler = (leaderName) => {
@@ -28,20 +28,21 @@ class App extends React.Component {
   }
   render() {
     return (
-    <div className="App">
-    <h1>{this.state.title}</h1>
-    <Banner clickCallback={this.titleChangeListener}></Banner>
-    <button onClick={this.changeNameHandler.bind(this,"Iron Man")}>Change</button>
-    <button onClick={()=>this.changeNameHandler("Iron Man 3")}>Change1</button>
-    <Persion clickCallback={this.changeNameHandler.bind(this,"Bat Man")} name={this.state.persons[0].name} age={this.state.persons[0].age} />
-    <Pet sprcie="dog" name="doff"/>
-    <Persion name={this.state.persons[1].name} age={this.state.persons[1].age}/>
-    <Persion name={this.state.persons[2].name} age={this.state.persons[2].age}/>
+      <div className="App">
+        <h1>{this.state.title}</h1>
+        <Banner clickCallback={this.titleChangeListener}></Banner>
+        <button onClick={this.changeNameHandler.bind(this, "Iron Man")}>Change</button>
+        <button onClick={() => this.changeNameHandler("Iron Man 3")}>Change1</button>
+        <Persion clickCallback={this.changeNameHandler.bind(this, "Bat Man")} name={this.state.persons[0].name} age={this.state.persons[0].age} />
+        <Pet sprcie="dog" name="doff" />
+        <Persion name={this.state.persons[1].name} age={this.state.persons[1].age} />
+        <Persion name={this.state.persons[2].name} age={this.state.persons[2].age} />
 
-    </div>
-    // React.createElement('div',{className:'App'},React.createElement('h1',null,'Hi')
-    // ,React.createElement('h1',null,"Hi this is react programming"))
-  )};
+      </div>
+      // React.createElement('div',{className:'App'},React.createElement('h1',null,'Hi')
+      // ,React.createElement('h1',null,"Hi this is react programming"))
+    )
+  };
 }
 
 export default App;
