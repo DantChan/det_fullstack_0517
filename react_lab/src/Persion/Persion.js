@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-
+import "./Persion.css"
 const Persion = (props) => {
     const [stateString, changeString] = useState({publisher:"Marvel Studio"})
     const showState = () => {
@@ -9,7 +9,7 @@ const Persion = (props) => {
         changeString({publisher:"DC COMICS", studio:stateString.studio})
     }
   return (
-    <div>
+    <div className='Persion'>
         <h1>{stateString.publisher}</h1>
         <button onClick={switchVenderHandler}>Change!!</button>
         <button onClick={showState}>show State</button>
