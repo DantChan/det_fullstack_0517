@@ -3,12 +3,18 @@ import React from 'react';
 import Dashboard from './components/Dashboard';
 import Persion from './Persion/Persion';
 import Pet from './Pet/Pet';
+import Banner from './components/Banner';
 class App extends React.Component {
+  titleChangeListener = event => {
+    this.setState({ title: event.target.value })
+  }
   state={
     persons:[{name:"mark",age:44},
     {name:"frank",age:32},
     {name:"tim",age:23}],
-    teamMax:10
+    teamMax:10,
+    title:"hello react"
+
   }
   changeNameHandler = (leaderName) => {
     console.log("button clicked!!!!!")
@@ -23,6 +29,8 @@ class App extends React.Component {
   render() {
     return (
     <div className="App">
+    <h1>{this.state.title}</h1>
+    <Banner clickCallback={this.titleChangeListener}></Banner>
     <button onClick={this.changeNameHandler.bind(this,"Iron Man")}>Change</button>
     <button onClick={()=>this.changeNameHandler("Iron Man 3")}>Change1</button>
     <Persion clickCallback={this.changeNameHandler.bind(this,"Bat Man")} name={this.state.persons[0].name} age={this.state.persons[0].age} />
