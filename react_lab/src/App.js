@@ -5,10 +5,10 @@ import Persion from './Persion/Persion';
 function App() {
   return (
     <div className="App">
-      <Dashboard/>
-      <Persion/>
-      <Dashboard/>
-      <Persion/>
+      <Persion age="45" name="adt"/>
+      <Persion age="42" name="dee"/>
+      <Persion name="dee">Team Leader</Persion>
+
     </div>
     // React.createElement('div',{className:'App'},React.createElement('h1',null,'Hi')
     // ,React.createElement('h1',null,"Hi this is react programming"))

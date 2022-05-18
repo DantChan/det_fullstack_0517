@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Persion = () => {
+const Persion = (props) => {
   return (
     <div>
-        <p>Hi I am groot i am the {Math.floor(Math.random()*10)}th generation</p>
+        <p> <em>I am {props.children}</em> Hi I am {props.name} i am {props.age} age i am the {Math.floor(Math.random()*10)}th generation</p>
     </div>
   )
 }
