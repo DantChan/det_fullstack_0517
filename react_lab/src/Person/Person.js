@@ -1,6 +1,10 @@
 import React, { useState } from 'react'
 import "./Person.css"
 const Person = (props) => {
+    const style = {
+        '@media(min-width:500px':{width:'1000
+        px'}
+    }
     const [stateString, changeString] = useState({
         publisher: "Marvel Studio",
         studio: "Disney"
