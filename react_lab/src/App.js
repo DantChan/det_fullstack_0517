@@ -5,7 +5,21 @@ import Dashboard from './components/Dashboard.js';
 import Person from './Person/Person';
 import Pet from './Pet/Pet';
 import Banner from './components/Banner';
+import Styled from 'styled-components';
+const StyledButton = Styled.button`
+        background-color: ${props => (props.alt === "true" ? "blue" : "red")};
+        color: white;
+        font: inherit;
+        border: 2px solid red;
+        padding: 4px;
+        cursor: pointer;
+        &:hover {
+          backgroundColor: lightblue;
+          color: black;
+        }
+    `
 class App extends React.Component {
+  
   titleChangeListener = event => {
     this.setState({ title: event.target.value })
   }
@@ -42,14 +56,6 @@ class App extends React.Component {
     })
   }
   render() {
-    const style = {
-      backgroundColor: "green",
-      color:'white',
-      font: "inherit",
-      border: "2px solid red",
-      padding: "4px",
-      cursor: 'pointer'
-    }
     // add this...
     let persons = null;
     if (this.state.showPersons === true) {
@@ -60,8 +66,6 @@ class App extends React.Component {
           name={p.name}
           age={p.age} />)}
       </div>)
-      style.backgroundColor='red'
-      style.color='black'
     }
     const classes = [];
     if (this.state.persons.length<=2) {
@@ -72,10 +76,10 @@ class App extends React.Component {
     }    return (
       <div className="App">
       <p className={classes.join(' ')}>{this.state.title}</p>
-      <button style={style} onClick={() => this.toggleDisplayHandler()}>Show/Hide</button><br />
-        <Banner clickCallback={this.titleChangeListener} name={this.state.title}></Banner>
+      <StyledButton  
+        alt={this.state.showPersons ? "true" : "false"}
+        onClick={() => this.toggleDisplayHandler()}>Show/Hide</StyledButton>        <Banner clickCallback={this.titleChangeListener} name={this.state.title}></Banner>
         <button
-          style={style}
           onClick={() => this.changeNameHandler("Iron Man")}>Change</button>
         {persons}
       </div>
