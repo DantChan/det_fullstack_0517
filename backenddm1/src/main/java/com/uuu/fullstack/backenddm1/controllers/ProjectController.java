@@ -19,6 +19,7 @@ import java.util.Map;
 @RestController
 @RequestMapping("/api/project")
 @Slf4j
+@CrossOrigin//可跨網域存取 針對javascript 無法存取跨網域資源問題
 public class ProjectController {
     @Autowired
     ProjectService projectService;
@@ -41,9 +42,14 @@ public class ProjectController {
 
     @GetMapping("/{projectId}")
     public ResponseEntity<?> getProjectById(@PathVariable String projectId) {
-
         Project p = projectService.findProjectByIdentifier(projectId.toUpperCase());
         return new ResponseEntity<>(p, HttpStatus.OK);
 
+    }
+
+    @DeleteMapping("/id/{projectId}")
+    public ResponseEntity<?> deleteProjectByProjectId(@PathVariable String projectId) {
+        projectService.deleteProjectByIdentifier(projectId);
+        return new ResponseEntity<>(String.format("Project id:%s was deleted",projectId),HttpStatus.OK);
     }
 }
